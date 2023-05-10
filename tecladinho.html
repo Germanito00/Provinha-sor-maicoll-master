@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Teclado Virtual</title>
+	Tecladinho Virtual
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado Virtual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+    
+        .EsC
+        {
+
+            justify-content: left;
+            justify-items: left;
+            align-items: center;
+            position: relative;
+            left: -43%;
+
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+            outline: none;
+            box-shadow: 10px 5px 5px black;
+        }
+
+        button:hover {
+            background-color: #eaeaea;
+        }
+
+        .setas
+        {
+
+            flex-direction: row;
+            justify-content: right;
+            align-items:center;
+            justify-items: right;
+            position: absolute;
+            right: 10%;
+            top: 35%;
+        }
+            
+        
+        .Capa
+        {
+
+          
+            background-color:grey;
+            height: 48vh;
+            box-shadow: 10px 5px 5px black;
+            
+        }
+    </style>
+    </head>
+    <body>
+    </head>
+    <body>
+        <div class="Capa">
+            <div class="teclado">
+                <div class="EsC">
+                    <div class="linha">
+                        <button id="27">esc</button>
+                    </div>
+                </div>
+                <div class="linha">
+                    <button id="192">~ `</button>
+                    <button id="49">1 !</button>
+                    <button id="50">2 @ </button>
+                    <button id="51">3 # </button>
+                    <button id="52">4 $ </button>
+                    <button id="53">5 %</button>
+                    <button id="54">6 ¨ </button>
+                    <button id="55">7 & </button>
+                    <button id="56">8 * </button>
+                    <button id="57">9 ( </button>
+                    <button id="48">0 ) </button>
+                    <button id="189">- _</button>
+                    <button id="187">+ =</button>
+                    <button id="8">⌫</button>
+                </div>
+                <div class="linha">
+                    <button id="9">tab</button>
+                    <button id="81">Q</button>
+                    <button id="87">W</button>
+                    <button id="69">E</button>
+                    <button id="82">R</button>
+                    <button id="84">T</button>
+                    <button id="89">Y</button>
+                    <button id="85">U</button>
+                    <button id="73">I</button>
+                    <button id="79">O</button>
+                    <button id="80">P</button>
+                    <button id="219">{ [</button>
+                    <button id="221">} ]</button>
+                    <button id="220">| \</button>
+                </div>
+                <div class="linha">
+                    <button id="20">caps lock</button>
+                    <button id="65">A</button>
+                    <button id="83">S</button>
+                    <button id="68">D</button>
+                    <button id="70">F</button>
+                    <button id="71">G</button>
+                    <button id="72">H</button>
+                    <button id="74">J</button>
+                    <button id="75">K</button>
+                    <button id="76">L</button>
+                    <button id="186">: ;</button>
+                    <button id="222">" '</button>
+                    <button id="13" class="largura-grande">↵</button>
+                </div>
+                <div class="linha">
+                    <button id="16" class="largura-grande">Shift</button>
+                    <button id="90">Z</button>
+                    <button id="88">X</button>
+                    <button id="67">C</button>
+                    <button id="86">V</button>
+                    <button id="66">B</button>
+                    <button id="78">N</button>
+                    <button id="77">M</button>
+                    <button id="188">< ,</button>
+                    <button id="190">> .</button>
+                    <button id="191">?  /</button>
+                    <button id="16" class="largura-grande">Shift</button>
+                </div>
+                <div class="linha">
+                    <button id="17">ctrl </button>
+                    <button id="18">alt</button>
+                    <button id="32" class="largura-muito-grande">Espaço</button>
+                    <button id="18">alt</button>
+                    <button id="17">ctrl</button>
+                    <div class="setas">
+                        <button id="38" class="up-arrow">↑</button>
+                        <div>
+                        <button id="37" class="left-arrow">←</button>
+                        <button id="40" class="down-arrow">↓</button>
+                        <button id="39" class="right-arrow">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+                        
+    </body>
+
+    <script>
+    
+        document.onkeydown = Pega_Tecla;
+        
+        function Pega_Tecla(e) 
+        {	
+            e = e || window.event;
+        
+            tecla = e.keyCode;
+            console.log(tecla); // MOSTRA O CÓDIGO DA TECLA PRESSIONADA
+            TiarCores();
+            document.getElementById(tecla).style.backgroundColor = "yellow"
+        
+        }
+        function TiarCores()
+        {
+
+            for (x=1;x<=300;x++)
+            {
+                var el = document.getElementById(x);
+                if (el) {
+                    el.style.backgroundColor = "lightblue"
+                }
+                
+            }
+         
+        }
+        </script>
+        
